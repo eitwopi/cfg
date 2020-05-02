@@ -1,0 +1,14 @@
+[gui]
+    editor = vim
+
+[alias]
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    co = checkout
+    showfiles = show --pretty=\"\" --name-only
+    tree = log --graph --pretty=oneline --abbrev-commit
+    remote-branches = !git for-each-ref --sort=committerdate refs/remotes/ --format='%(committerdate:short)|%(authorname)|%(refname:short)' | column -ts'|'
+
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
