@@ -10,6 +10,9 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # Update the LINES and COLUMNS for the window size
 shopt -s checkwinsize
 
+# Use a color prompt, it's just better
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
