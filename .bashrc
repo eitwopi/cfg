@@ -37,9 +37,13 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-# Default to vim
-export VISUAL=vim
+# Default to neovim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
+alias vim=nvim
+alias vi=nvim
+export VIMCONFIG=$HOME/.config/nvim
+export VIMDATA=$HOME/.local/share/nvim
 
 # Alias definitions
 if [ -f ~/.bash_aliases ]; then

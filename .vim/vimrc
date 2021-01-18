@@ -81,6 +81,43 @@ set splitright
 "" ALE find references
 "nmap <F12> <Plug>(ale_find_references)
 
+" Configure the sendtowindow plugin
+let g:sendtowindow_use_defaults=0
+nmap <M-L> <Plug>SendRight
+xmap <M-L> <Plug>SendRightV
+nmap <M-H> <Plug>SendLeft
+xmap <M-H> <Plug>SendLeftV
+nmap <M-K> <Plug>SendUp
+xmap <M-K> <Plug>SendUpV
+nmap <M-J> <Plug>SendDown
+xmap <M-J> <Plug>SendDownV
+
+" Switch windows with Alt- in all modes
+nnoremap <M-h> <C-w>h
+nnoremap <M-j> <C-w>j
+nnoremap <M-k> <C-w>k
+nnoremap <M-l> <C-w>l
+inoremap <M-h> <Esc><C-w>h
+inoremap <M-j> <Esc><C-w>j
+inoremap <M-k> <Esc><C-w>k
+inoremap <M-l> <Esc><C-w>l
+vnoremap <M-h> <Esc><C-w>h
+vnoremap <M-j> <Esc><C-w>j
+vnoremap <M-k> <Esc><C-w>k
+vnoremap <M-l> <Esc><C-w>l
+" Terminal mode only exists in nvim
+if has('nvim')
+    tnoremap <M-h> <C-\><C-n><C-w>h
+    tnoremap <M-j> <C-\><C-n><C-w>j
+    tnoremap <M-k> <C-\><C-n><C-w>k
+    tnoremap <M-l> <C-\><C-n><C-w>l
+    tnoremap <Esc> <C-\><C-n>
+    tnoremap <C-v><Esc> <Esc>
+    highlight! link TermCursor Cursor
+    highlight! TermCursorNC guibg=red guifg=white ctermbg=1 ctermfg=15
+    highlight! TermCursor guifg=white ctermfg=15
+ endif
+
 " MUST LEAVE THE FOLLOWING AT THE END OF VIMRC
 " Load all plugins now.
 " Plugins need to be added to runtimepath before helptags can be generated.
